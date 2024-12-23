@@ -1,0 +1,46 @@
+# Ignore node_modules and npm debug log (for Node.js projects)
+node_modules
+node_modules/
+.idea
+npm-debug.log
+# Python-related files
+__pycache__
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment folder (for Python projects)
+venv/
+env/
+
+# Ignore Git-related files
+.git
+.gitignore
+
+# Ignore Dockerfile, docker-compose files (optional if not needed inside the container)
+Dockerfile
+docker-compose.yml
+
+# Ignore logs
+*.log
+
+# Ignore environment variable files
+.env
+
+# Ignore files created by your editor/IDE
+*.swp
+*.swo
+*.swn
+*.bak
+.idea/
+.vscode/
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore static and temporary files
+staticfiles/
+mediafiles/
+temp/
+.next

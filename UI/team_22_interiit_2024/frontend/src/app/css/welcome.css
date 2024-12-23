@@ -1,0 +1,67 @@
+.welcome {
+  background-color: #000;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  animation: fadeInOut 3s forwards;
+}
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.custom-svg svg path {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 0.5;
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  animation: textAnimation 2s ease-in-out forwards;
+}
+
+@keyframes textAnimation {
+  0% {
+    stroke-dashoffset: 220;
+  }
+  70% {
+    fill: transparent;
+  }
+  90% {
+    fill: #991b1b;
+  }
+  100% {
+    fill: #991b1b;
+    stroke-dashoffset: 0;
+  }
+  /* 90% {
+    fill: #fff;
+  }
+  100% {
+    fill: #fff;
+    stroke-dashoffset: 0;
+  } */
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  25% {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  75% {
+    opacity: 1;
+    background-color: rgba(138, 92, 92, 0.1);
+  }
+  100% {
+    opacity: 0;
+    background-color: rgba(187, 162, 162, 0.1);
+  }
+}

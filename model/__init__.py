@@ -1,0 +1,1 @@
+from src.model.train_classical_model import train_test_model

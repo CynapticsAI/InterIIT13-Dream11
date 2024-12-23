@@ -1,0 +1,1 @@
+export const MATCH_TYPES = ["Test", "MDM", "ODI", "ODM", "T20", "IT20"]

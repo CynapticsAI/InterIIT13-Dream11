@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/page.jsx", "src/app/EachMatch/[id]/SelectTeam/page.jsx", "src/app/PlayerData/[id]/[year]/[match_type]/page.jsx", "src/components/CricketPlayerDashBoard.jsx", "src/components/chatbot.jsx", "src/components/MatchDetailClient.jsx", "src/components/AddMatchPage.tsx", "src/components/PerformanceChart.jsx"],
+  "exclude": ["node_modules"]
+}

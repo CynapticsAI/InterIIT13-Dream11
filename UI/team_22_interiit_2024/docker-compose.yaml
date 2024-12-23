@@ -1,0 +1,61 @@
+version: "3"
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    depends_on:
+      - redis
+    volumes:
+      - static_volume:/app/static
+      - media_volume:/app/media
+    networks:
+      - app-network
+
+  daphne:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    command:
+      ["daphne", "-b", "0.0.0.0", "-p", "8001", "backend.asgi:application"]
+    ports:
+      - "8001:8001"
+    depends_on:
+      - backend
+      - redis
+    networks:
+      - app-network
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+      - "8443:443"
+    depends_on:
+      - daphne
+    environment:
+      - USE_SSL=true
+    volumes:
+      - static_volume:/app/static
+      - media_volume:/app/media
+      - ./nginx/ssl-certs:/etc/letsencrypt/live/qwertyweb.xyz
+    networks:
+      - app-network
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
